@@ -8,8 +8,10 @@ $(document).ready (function(){
 // let flashCards1 = JSON.parse(flashcards)
 console.log("hi")
 // console.log(JSON.parse(flashcards))
-console.log(flashcards)
-console.log(test_value)
+// console.log(flashcards)
+// console.log(test_value)
+// console.log(JSON.parse(js_results))
+console.log(test_object)
 $('#flashcardsUpload').hide()
 
 
