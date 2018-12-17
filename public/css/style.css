@@ -1,6 +1,55 @@
-#flashcardsLoaded{
-    background: pink; 
-    width: 50%;
-    height: 50%;
-    color: black
+#flashcardsUploaded{
+    background:#9e9e9e; 
+    width: 340px;
+    height: 360px;
+    color: black;
+    border: solid gray 1px;
+    border-radius: 25px
 }
+
+body{
+    background: black
+}
+
+#flashcardsLoaded{
+    background:#9e9e9e; 
+    width: 340px;
+    height: 360px;
+    color: black;
+    border: solid gray 1px;
+    border-radius: 25px
+}
+
+#submit{
+    background: green;
+    border-radius: 15px;
+    color: black;
+    border: green
+}
+#addCard {
+    border-radius: 15px;
+    background: green;
+    color: black;
+    border: green
+}
+
+h6 {
+    font-family: 'Press Start 2P', cursive;
+    color: green;
+    background: black;
+    text-align: center
+}
+
+h1 {
+    font-family: 'Staatliches', cursive;
+    background: green;
+    margin-bottom: -5%
+/* font-family: 'Ranchers', cursive; */
+
+}
+
+#header2 {
+    margin-top: -4%
+}
+
+

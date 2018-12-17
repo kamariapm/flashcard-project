@@ -12,16 +12,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 let db
 
-function parseMongoData(mongoObject) {
-    const jObject = {
-        question: mongoObject.question,
-        answer: mongoObject.answer,
-        hint: mongoObject.hint
-    }
-    console.log("insideparseMongo",jObject)
-    return jObject
+// function parseMongoData(mongoObject) {
+//     const jObject = {
+//         question: mongoObject.question,
+//         answer: mongoObject.answer,
+//         hint: mongoObject.hint
+//     }
+//     console.log("insideparseMongo",jObject)
+//     return jObject
     
-}
+// }
 
 MongoClient.connect('mongodb://sandbox:project1@ds117888.mlab.com:17888/flashcards', (err, database) => {
     if (err) return console.log(err)
@@ -35,12 +35,14 @@ MongoClient.connect('mongodb://sandbox:project1@ds117888.mlab.com:17888/flashcar
 app.get('/', (req, res) => {
     let cursor = db.collection('flashcards').find().toArray(function(err, results){
         if (err) return console.log(err)
-        const js_results = results.map(flashcard => parseMongoData(flashcard))
-        console.log(js_results)
-        const test_object = {val1: 1, val2: 2}
-        res.render('index.pug', {flashcards: JSON.stringify(results), test_value:(results[0].question), js_results: JSON.stringify(js_results), test_object: JSON.stringify(test_object)})  
+        // const js_results = results.map(flashcard => parseMongoData(flashcard))
+        // console.log(js_results)
+        // const test_object = {val1: 1, val2: 2}
+        res.render('index.pug', {flashcards: (results)})
     }) 
 }) 
+
+// , test_value:(results[0].question), js_results: JSON.stringify(js_results), test_object: JSON.stringify(test_object)}) 
 
 app.post('/flashcards', (req, res) => {
     

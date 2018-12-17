@@ -8,32 +8,54 @@ head
   link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
   link(rel='stylesheet' href='/css/style.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+  link(href='https://fonts.googleapis.com/css?family=Press+Start+2P|Staatliches|Ranchers' rel='stylesheet')
 
 body
-
-  h1 Flashcards
-
+  .container
+    h1 Flashcards
+    #header2
+      h6 
+        br
+        |  for Software Engineers
+        br
+        br
   form(action='/flashcards' method='POST')
+    .container#flashcardsUploaded
+      .row
+        input(type='text' placeholder='Enter question' name='question')
+      .row    
+        input(type='text' placeholder='Enter answer' name='answer')
+      .row
+        input(type='text' placeholder='Enter hint' name='hint')
+      button#submit(type='submit') Submit
+
+
+      
+
+  button#addCard(type='submit') Create Flashcard
+
+
     .container#flashcardsLoaded
       .row
-        .col-sm-6
-          input(type='text' placeholder='question' name='question')
-        .col-sm-6
-          input(type='text' placeholder='answer' name='answer')
+        #question(type='text' placeholder='question' name='question')
+      .row    
+        #hint(type='text' placeholder='answer' name='answer')
+      .row
+        #answer(type='text' placeholder='hint' name='hint')
       .row
         .col
-          input(type='text' placeholder='hint' name='hint')
-      button(type='submit') Submit
-
-
-
+          button#submit(type='submit') Hint
+        .col
+          button#submit(type='submit') Answer
+      .row
+        button#submit(type='submit') Next Card
 
 
   ul(class="flashcards")
     each question in flashcards
       li(class="quote")
-      span= question.question + ": "
-      span= question.hint
+      span= question.question + " "
+      span= question.hint + " "
       span= question.answer
 
 
@@ -42,9 +64,11 @@ script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.m
 script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
 script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
  
-script. 
-  var flashcards = '#{flashcards}'
-  var test_value = '#{test_value}'
-  var js_results = '#{js_results}'
-  var test_object = '#{test_object}'
-script(src="/scripts/index.js")
+    
+
+//- script. 
+//-   var flashcards = '#{flashcards}'
+//-   var test_value = '#{test_value}'
+//-   var js_results = '#{js_results}'
+//-   var test_object = '#{test_object}'
+//- script(src="/scripts/index.js")
