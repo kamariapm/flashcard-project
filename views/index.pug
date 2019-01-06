@@ -4,15 +4,13 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   meta(http-equiv='X-UA-Compatible' content='ie=edge')
-  title Flashcards
+  title flashcards
   link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
   link(rel='stylesheet' href='/css/style.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
   link(href='https://fonts.googleapis.com/css?family=Press+Start+2P|Staatliches|Ranchers' rel='stylesheet')
 
 body
-
- 
   .container#welcomeToWebsite
     h1 Flashcards:
     #header2
@@ -25,32 +23,6 @@ body
     h3 Welcome to the Matrix.
   button#begin(type='btn') Begin Downloading
 
-  button#update(type='btn') Edit Card
-
- 
-  form(action='/flashcards' method='POST')
-    .container#flashcardsUploaded
-      .row
-        input#addCardQuest(type='text' placeholder='Enter question' name='question')
-      .row    
-        input#addCardAnsw(type='text' placeholder='Enter answer' name='answer')
-      .row
-        input#addCardHint(type='text' placeholder='Enter hint' name='hint')
-      button#submit(type='submit') Submit
-      button#cancel(type='button' value='Reset Form' onclick='this.form.reset()') Cancel
-    
-
-  form(action='/flashcards' method='PUT')
-    .container#flashcardsUpdated
-      .row
-        input#updateCardQuest(type='text' placeholder='Edit question' name='question')
-      .row    
-        input#updateCardAnsw(type='text' placeholder='Edit answer' name='answer')
-      .row
-        input#updateCardHint(type='text' placeholder='Edit hint' name='hint')
-      button#submitPut(type='submit') Submit
-      button#cancelPut(type='button' value='Reset Form' onclick='this.form.reset()') Cancel  
-      
   .container#flashcardsLoaded
     .row#questionRow
       #question.typewriter
@@ -66,7 +38,46 @@ body
     .row
       button#submitNext(type='btn') Next Card →
       button#addCard(type='submit') Add Card +
+ 
+  form(action='/flashcards' method='POST')
+    .container#flashcardsUploaded
+      .row
+        input#addCardQuest(type='text' placeholder='Enter question' name='question')
+      .row    
+        input#addCardAnsw(type='text' placeholder='Enter answer' name='answer')
+      .row
+        input#addCardHint(type='text' placeholder='Enter hint' name='hint')
+      button#submit(type='submit') Submit
+      button#cancel(type='button' value='Reset Form' onclick='this.form.reset()') Cancel
+    
+    
+  button#update(type='btn') Edit Card
+  form(action='/flashcards/:id' method='POST')
+    .container#flashcardsUpdated
+      .row
+        input.id(type='text' name='id')
+      .row
+        input#updateCardQuest(type='text' placeholder='Edit question' name='question')
+      .row    
+        input#updateCardAnsw(type='text' placeholder='Edit answer' name='answer')
+      .row
+        input#updateCardHint(type='text' placeholder='Edit hint' name='hint')
+      button#submitPut(type='submit') Submit
+      button#cancelPut(type='button' value='Reset Form' onclick='this.form.reset()') Cancel  
 
+  form(action='/flashcards/delete/:id' method='POST')
+    .container#flashcardsDelete
+      .row
+        input.id(type='text' name='id')
+      .row
+        input#deleteCardQuest(type='text' placeholder='Edit question' name='question')
+      .row    
+        input#deleteCardAnsw(type='text' placeholder='Edit answer' name='answer')
+      .row
+        input#deleteCardHint(type='text' placeholder='Edit hint' name='hint')
+      button#delete(type='submit') Delete
+      button#cancelDelete(type='button' value='Reset Form' onclick='this.form.reset()') Cancel 
+  button#deleteCard(type='button') Delete Card
 
 
 script(src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous')
@@ -76,20 +87,11 @@ script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/material
 script(src="/scripts/index.js")
     
 
-//- script. 
-//-   var flashcards = '#{flashcards}'
-//-   var test_value = '#{test_value}'
-//-   var js_results = '#{js_results}'
-//-   var test_object = '#{test_object}'
-//- script(src="/scripts/index.js")
-//- script. 
-//-   console.log(flashcards)
-//-   var flashcards = '#{flashcards}'
-//-   var test_value= '#{test_value}'
+    
 
 
-
-//- .modal#ifEmptyStrings(tabindex='-1' role='dialog')
+//- Not working properly YET, creating a a function that checks for empty strings 
+//-.modal#ifEmptyStrings(tabindex='-1' role='dialog')
       .modal-dialog(role='document')
         .modal-content
           .modal-header

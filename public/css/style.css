@@ -1,146 +1,29 @@
-/* #flashcardsUploaded{
-    background: black;  */
-    /* width: 340px; */
-    /* height: 360px;
-    color: green; */
-    /* border: solid gray 1px; */
-    /* border-radius: 25px;
-    font-family: 'Press Start 2P', cursive;
-} */
-#flashcardsUploaded{
-    color: green;
-    border-radius: 25px;
-    font-family: 'Press Start 2P', cursive;
-    width: 800px; 
-    position: fixed;
-    left:18%;
-    margin-top: 15%;
+body{
+    background: black
 }
+/* "Flashcards" header */
+h1 {
+    font-family: 'Staatliches', cursive;
+    background: green;
+    margin-bottom: -5%
+}
+
+#header2 {
+    margin-top: -4%
+}
+
 #welcomeCard{
-    /* width: 500px;
-    height: 200px; */
-    /* border-radius: 25px; */
     margin-top: 5%;
     color: green;
     font-family: 'Press Start 2P', cursive;
 }
 
-/* #question, #answer, #hint{
-    background: black
-} */
-
-#addCardQuest, #addCardAnsw, #addCardHint{
-    border: black;
-    color: green;
-    font-family: 'Press Start 2P', cursive;
-}
-
-body{
-    background: black
-}
-
-#flashcardsLoaded{
-    background:black; 
-    width: 800px; 
-    position: fixed;
-    left:15%;
-    text-align: center;
-    /*height: 360px; */
-    color: green;
-    border: solid black;
-    border-radius: 25px;
-    font-family: 'Press Start 2P', cursive;
-    margin-top: 15%;
-}
-
-#submit,#submitHint, #submitAnswer, #cancel, #submitNext, #update, #begin, #submitPut, #cancelPut{
-    background: green;
-    /* border-radius: 15px; */
-    color: black;
-    border: green;
-    font-family: 'Press Start 2P', cursive;
-} 
-
-#submitPut{
-    position: fixed;
-    bottom: 10%;
-    right: 40%;
-    height: 30px;
-}
-
-#cancelPut{
-    position: fixed;
-    bottom: 10%;
-    right: 30%;
-    height: 30px;
-    
-}
-
-#submit{
-    margin-right: 8%
-}
-
-#submitHint{
-    position: fixed;
-    bottom: 40%;
-    left: 25%; 
-    height: 30px;
-}
-
-#submitAnswer{
-    position: fixed;
-    bottom: 40%;
-    right: 25%;
-    height: 30px;
-}
-
-
-#submitNext{
-position: fixed;
-    bottom: 10%;
-    right: 10%;
-    height: 30px;
-}
-
-#begin{
-    position: fixed;
-    bottom: 0;
-    left: 39%;
-    /* border-radius: 15px; */
-    height: 30px;
-    /* width: 150px; */
-    margin-bottom: 12%
-}
- 
-#updateCardQuest, #updateCardHint, #updateCardAnsw{
-    color: green
-}
-
-#addCard {
-    /* border-radius: 15px; */
-    height: 30px;
-    /* width: 150px; */
-    background: green;
-    color: black;
-    border: green;
-    position: fixed;
-    bottom: 10%;
-    left: 10%; 
-    font-family: 'Press Start 2P', cursive;
- 
-}
-
-/* h1{
-    border-radius: 25px
-} */
 h6 {
     font-family: 'Press Start 2P', cursive;
     color: green;
     background: black;
     text-align: center;
-    /* border-radius: 25px; */
 }
-
 
  .typewriter h3{
     overflow: hidden; /*Ensures the content is not revealed until the animation */
@@ -165,15 +48,119 @@ h6 {
     50% { border-color: green; }
   }
 
-h1 {
-    font-family: 'Staatliches', cursive;
-    background: green;
-    margin-bottom: -5%
-/* font-family: 'Ranchers', cursive; */
+  /* Button to begin app */
+  #begin{
+    position: fixed;
+    bottom: 0;
+    left: 39%;
+    height: 30px;
+    margin-bottom: 12%
 }
 
-#header2 {
-    margin-top: -4%
+/* Styling for all containers */
+#flashcardsLoaded, #flashcardsUpdated, #flashcardsUploaded, #flashcardsDelete{
+    background:black; 
+    width: 800px; 
+    position: fixed;
+    left:15%;
+    text-align: center;
+    color: green;
+    border: solid black;
+    border-radius: 25px;
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 10%;
 }
+
+/* Add flashcard test fields */
+#addCardQuest, #addCardAnsw, #addCardHint{
+    color: green;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Styling for all buttons */
+#submit,#submitHint, #deleteCard, #submitAnswer, #cancel, #delete, #cancelDelete, #submitNext, #update, #begin, #submitPut, #cancelPut{
+    background: green;
+    color: black;
+    border: green;
+    font-family: 'Press Start 2P', cursive;
+    height: 30px;
+}
+
+/* Add card button */
+#update{
+    position: fixed;
+    top: 0%;
+    right: 0%;
+}
+
+/* Delete flashcard text fields*/
+#deleteCardQuest, #deleteCardHint, #deleteCardAnsw{
+    color:green;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Delete card button */
+#deleteCard{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
+
+/* Edit card, delete, and add card submit buttons */
+#submitPut, #delete, #submit{
+    position: fixed;
+    bottom: 10%;
+    left: 30%;
+}
+
+/* Cancel buttons for Edit card, delete, and add card */
+#cancelPut, #cancelDelete, #cancel{
+    position: fixed;
+    bottom: 10%;
+    right: 30%;    
+}
+
+/* Hint button */
+#submitHint{
+    position: fixed;
+    bottom: 40%;
+    left: 25%; 
+    height: 30px;
+}
+
+/* answer button */
+#submitAnswer{
+    position: fixed;
+    bottom: 40%;
+    right: 25%;
+    height: 30px;
+}
+
+/* Next card button */
+#submitNext{
+position: fixed;
+    bottom: 10%;
+    right: 10%;
+    height: 30px;
+}
+
+/* Edit card text fields */
+#updateCardQuest, #updateCardHint, #updateCardAnsw{
+    color: green;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Add card button */
+#addCard {
+    height: 30px;
+    background: green;
+    color: black;
+    border: green;
+    position: fixed;
+    bottom: 10%;
+    left: 10%; 
+    font-family: 'Press Start 2P', cursive;
+}
+
 
 
